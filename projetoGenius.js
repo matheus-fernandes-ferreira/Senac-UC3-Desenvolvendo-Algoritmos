@@ -8,7 +8,8 @@ function iniciarJogo() {
     
 
 }
-while (true) {
+var teste = true;
+while (.) {
     rodada()
     if (resultado = false) {
         fimDeJogo()
@@ -19,7 +20,10 @@ while (true) {
     fimDejogo()
     pontuacao += 10
     nivel++
+
 }
+
+
 function rodada() {
     sequenciaMaquina = gerarsequencia()
     exibirSequencia(sequencia)

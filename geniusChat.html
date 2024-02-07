@@ -5,19 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Genius Game</title>
 <style>
+    #content{
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        flex-direction: column;
+        height: 90vh;
+    }
+    #iniciar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
   }
   .button {
     width: 100px;
     height: 100px;
     margin: 10px;
     border: 2px solid #000;
-    display: inline-block;
+    display: flex;
+    flex-wrap: nowrap.;
   }
+
   #btn1 { background-color: red; }
   #btn2 { background-color: blue; }
   #btn3 { background-color: green; }
@@ -25,29 +38,32 @@
 </style>
 </head>
 <body>
-<div class="container">
-  <div id="btn1" class="button"></div>
-  <div id="btn2" class="button"></div>
-  <div id="btn3" class="button"></div>
-  <div id="btn4" class="button"></div>
-</div>
-
+    <div id="content">
+        <div id="iniciar">
+            <button onclick="iniciarJogo()">Iniciar jogo</button>
+        </div>
+        <div class="container">
+            <div id="btn1" class="button"></div>
+            <div id="btn2" class="button"></div>
+            <div id="btn3" class="button"></div>
+            <div id="btn4" class="button"></div>
+        </div>
+    </div>
 <script>
 var nivel = 1;
 var pontuacao = 0;
 var vetor = [1, 2, 3, 4];
-var sequenciaMaquina = [];
 var sequenciaDoJogador = [];
 
 function gerarNumeroAleatorio() {
     return vetor[Math.floor(Math.random() * vetor.length)];
 }
 
+sequenciaMaquina = []; 
 function iniciarJogo() {
-    sequenciaMaquina = [];
-    for (let i = 0; i < nivel; i++) {
-        sequenciaMaquina.push(gerarNumeroAleatorio());
-    }
+    //for (let i = 0; i < nivel; i++) {
+         sequenciaMaquina.push(gerarNumeroAleatorio());
+   // }
     exibirSequencia();
 }
 
@@ -96,7 +112,7 @@ function verificarSequencia() {
 }
 
 // Iniciar jogo
-iniciarJogo();
+//iniciarJogo();
 </script>
 
 </body>
