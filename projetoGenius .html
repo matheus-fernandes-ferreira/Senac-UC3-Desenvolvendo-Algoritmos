@@ -39,14 +39,17 @@
         <div class="buttons-container">
             <button id="start-button">Iniciar Jogo</button>
             <button id="finish-button">Finalizar Jogo</button>
-            <button class="number-button">1</button>
-            <button class="number-button">2</button>
-            <button class="number-button">3</button>
-            <button class="number-button">4</button>
+            <button class="number-button" onclick="buttonClicked(1)">1</button>
+            <button class="number-button" onclick="buttonClicked(2)">2</button>
+            <button class="number-button" onclick="buttonClicked(3)">3</button>
+            <button class="number-button" onclick="buttonClicked(4)">4</button>
         </div>
     </div>
     <script>
-        //Coloca o script aqui meu jovem
+        function buttonClicked(number) {
+            console.log("Botão " + number + " clicado!");
+            //Adicione o script aqui meu jovem
+        }
     </script>
 </body>
 </html>
