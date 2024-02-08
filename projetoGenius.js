@@ -3,12 +3,13 @@ var nivel = 1;
 var pontuacao = 0;
 var vetor = [1, 2, 3, 4];
 var sequenciaDoJogador = [];
-var alerta = document.getElementById('alerta');
+var alerta = document.getElementById('pontos');
+var rodada = document.getElementById('rodada');
 
 function gerarNumeroAleatorio() {
     return vetor[Math.floor(Math.random() * vetor.length)];
 }
-
+restGame()
 sequenciaMaquina = []; 
 function iniciarJogo() {
     //for (let i = 0; i < nivel; i++) {
@@ -18,11 +19,11 @@ function iniciarJogo() {
 }
 
 function exibirSequencia() {
-    let i = 0;
-    let intervalo = setInterval(function() {
-        piscar(sequenciaMaquina[i]);
-        i++;
-        if (i >= sequenciaMaquina.length) {
+    var exibir = 0;
+    var intervalo = setInterval(function() {
+        piscar(sequenciaMaquina[exibir]);
+        exibir++;
+        if (exibir >= sequenciaMaquina.length) {
             clearInterval(intervalo);
         }
     }, 1000);
@@ -51,14 +52,24 @@ function verificarSequencia() {
     let acertou = sequenciaDoJogador.every((element, index) => element === sequenciaMaquina[index]);
     sequenciaDoJogador = []; // Resetar para a próxima rodada
     if (acertou) {
-        //alert("Você acertou! Próximo nível!");
-        alerta.innerHTML = "Você acertou! Próximo nível!"
+        rodada.innerHTML = nivel;
         nivel++;
         pontuacao += nivel * 10;
+        alerta.innerHTML = pontuacao;
         iniciarJogo();
     } else {
-        //alert("Você errou! Fim de jogo.\nPontuação: " + pontuacao);
-        alerta.innerHTML = "Infelizmente você errou!"
+        alerta.innerHTML = pontuacao
         // Reiniciar jogo ou parar aqui
+        alert('Como eu sou quase um pai para vocês, podem jogar novamente!')
     }
+}
+
+function restGame()
+{
+    nivel = 0;
+    pontuacao = 0;
+    exibir = 0;
+    sequenciaMaquina = [];
+    rodada.innerHTML = nivel;
+    alerta.innerHTML = pontuacao;
 }
