@@ -1,0 +1,52 @@
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    flex-direction: column;
+    height: 90vh;
+}
+#iniciar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.button {
+width: 250px;
+height: 250px;
+margin: 10px;
+border: 2px solid #000;
+display: flex;
+flex-wrap: nowrap;
+}
+
+#btn1 { background-color: red; }
+#btn2 { background-color: blue; }
+#btn3 { background-color: green; }
+#btn4 { background-color: yellow; }
+
+
+.play-button {  
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+.play-button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 25px;
+    border-color: transparent transparent transparent #fff;
+}
